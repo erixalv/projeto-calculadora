@@ -14,24 +14,13 @@ function limpar() {
 }
 
 function calcular() {
-  const expressaoArray = expressao.split(/([+\-*/])/);
-  let tempResult = parseFloat(expressaoArray[0]);
+const expressaoArray = expressao.split(/([+\-*/])/);
+const finalResult = eval(expressao);
 
-  for (let i = 1; i < expressaoArray.length; i += 2) {
-    const operador = expressaoArray[i];
-    const num = parseFloat(expressaoArray[i + 1]);
-
-    if (operador === '+') {
-      tempResult += num;
-    } else if (operador === '-') {
-      tempResult -= num;
-    } else if (operador === '*') {
-      tempResult *= num;
-    } else if (operador === '/') {
-      tempResult /= num;
-    }
-  }
-
-  resultado.innerHTML = tempResult;
-  expressao = tempResult.toString();
+resultado.innerHTML = finalResult;
+expressao = finalResult.toString();
 }
+
+
+
+
